@@ -1,0 +1,9 @@
+{
+    "user":[
+        {"id":1, "name":"jay", "detail":"I'm jay!!"},
+        
+        {"id":2, "name":"jiwon", "detail":"I'm jiwon!!"},
+        
+        {"id":3, "name":"jayjiwon", "detail":"I'm jayjiwon!!"}
+    ]
+}
