@@ -1,12 +1,14 @@
 import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
 import { Input } from "antd";
 import axios from "axios";
+import Link from "next/link";
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { getUser, getUserOne } from "../lib/api/user";
 import { userData, userIdAtom } from "../store";
+import { motion } from "framer-motion";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -96,6 +98,9 @@ const HomeArticle = () => {
   if (error) return <>...error</>;
   return (
     <Wrapper>
+      <Link href={"/"}>
+        <a>Back to Home</a>
+      </Link>
       <UserContainer>
         {data?.map((item: userData) => (
           <ContentWrapper onClick={() => setUserId(item.id)} key={item.id}>
@@ -114,7 +119,9 @@ const HomeArticle = () => {
             <>
               {oneData.name}
               {oneData.detail}
-              {oneData.id}
+              <Link href={`/products/${oneData.id}`}>
+                <a>{oneData.id}로 이동</a>
+              </Link>
             </>
           )}
           {mutation.isError ? (

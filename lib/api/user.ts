@@ -1,12 +1,19 @@
 import axios from "axios";
 import { userData } from "../../store";
 axios.defaults.baseURL = "http://localhost:9000";
-export const getUser = () => {
-  return axios.get("/user").then((res) => res.data);
+export interface IUser {
+  productId: number;
+  name: string;
+  detail: string;
+}
+export const getUser = async () => {
+  const res = await axios.get("/user");
+  return res.data;
 };
 
-export const getUserOne = (id: number) => {
-  return axios.get(`/user/${id}`).then((res) => res.data);
+export const getUserOne = async (id: number) => {
+  const res = await axios.get(`/user/${id}`);
+  return res.data;
 };
 
 export const postUser = (user: userData) => {
