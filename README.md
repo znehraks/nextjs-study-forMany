@@ -1,5 +1,7 @@
 # Nextjs Study
 
+- [ ] Framer-motion  
+
 - [ ] Recoil Practice
 
   - [ ] Atom
